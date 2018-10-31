@@ -1,0 +1,14 @@
+N = int(input())
+X = [int(x) for x in input().split()]
+#Mean
+print(sum(X)/N)
+
+#Median
+X.sort()
+print(X[(N+1)//2 -1] if N&1 else ((X[(N//2)-1] + X[(N//2)])/2))
+
+#Mode
+d = {}
+for i in X:
+    d[i] = d.get(i,0) + 1
+print(min([key for key,value in d.items() if value == max(d.values())]))
